@@ -1,0 +1,179 @@
+/* =========================================================================
+   DESIGN TOKENS — Liquid Glass × 8 палитр
+   Цвета взяты из референсных карточек (измерены в пикселях; допуск ±2 из-за JPEG).
+   Стекло одинаково во всех темах; меняются только цвета, фоновые пятна и форма виджетов.
+
+   v0.11: четыре «яркие» темы заменены на спокойные — Plasma → Dark Lilac (тёмная сирень), Cognac → Dark Brown (тёмно-коричневая),
+          Neon Red → Burgundy (бордовая), Glass Green → Dark Blue (тёмно-синяя). Идентификаторы тем (plasma, cognac, neon, green)
+          сохранены, чтобы выбранная пользователем тема не сбросилась. Свечение, насыщенность стекла и цветные кромки приглушены во всех темах.
+   Токены палитры:  --palette-name · --primary · --secondary · --accent · --surface · --border
+                    --bg-stop-1/2/3 (градиент фона) · --glow-1/2 · --blob-1..4 · --txt1/2 · --on-primary
+                    --jelly-fill / --jelly-dot (цвета медузы)
+   Форма виджетов:  --r-tile (плитки-иконки) · --r-card (карточки/плеер) · --r-btn (кнопки)
+   ========================================================================= */
+
+/* ---------- 1. Dark Lilac (id «plasma», по умолчанию) · тёмная · приглушённая сирень ---------- */
+:root, [data-theme="plasma"] {
+  --palette-name: "Dark Lilac";
+  --primary: #9a82b8; --secondary: #5b4678; --accent: #d9cee8;
+  --surface: #1a1424; --border: #4a3b60;
+  --bg-stop-1: #0d0a13; --bg-stop-2: #1a1424; --bg-stop-3: #4a3b66;
+  --glow-1: #9a82b8; --glow-2: #5b4678;
+  --blob-1: #7d63a0; --blob-2: #5b4678; --blob-3: #b9a6d3; --blob-4: #3f3158;
+  --txt1: #f5f1f9; --txt2: #d9cee8; --on-primary: #130e1b;
+  --jelly-fill: #4a3b60; --jelly-dot: #8e78ab;
+  --r-tile: 20px; --r-card: 24px; --r-btn: 18px;
+}
+/* ---------- 2. Dark Brown (id «cognac») · тёмная · тёмно-коричневая ---------- */
+[data-theme="cognac"] {
+  --palette-name: "Dark Brown";
+  --primary: #8a5f3f; --secondary: #4f3322; --accent: #dcc7b3;
+  --surface: #21150d; --border: #5c4330;
+  --bg-stop-1: #110a06; --bg-stop-2: #21150d; --bg-stop-3: #4f3322;
+  --glow-1: #8a5f3f; --glow-2: #5c4330;
+  --blob-1: #8a5f3f; --blob-2: #4f3322; --blob-3: #b99a7e; --blob-4: #5c4330;
+  --txt1: #f7eee6; --txt2: #dcc7b3; --on-primary: #ffffff;
+  --jelly-fill: #4f3322; --jelly-dot: #8a5f3f;
+  --r-tile: 18px; --r-card: 24px; --r-btn: 16px;
+}
+/* ---------- 3. Burgundy (id «neon») · тёмная · бордовая ---------- */
+[data-theme="neon"] {
+  --palette-name: "Burgundy";
+  --primary: #9b2d45; --secondary: #5c1626; --accent: #e8c5cd;
+  --surface: #1a0a0f; --border: #5c2532;
+  --bg-stop-1: #0d0508; --bg-stop-2: #1a0a0f; --bg-stop-3: #5c1626;
+  --glow-1: #9b2d45; --glow-2: #701e32;
+  --blob-1: #8c2a3e; --blob-2: #5c1626; --blob-3: #c98b98; --blob-4: #701e32;
+  --txt1: #fbf3f4; --txt2: #e8c5cd; --on-primary: #ffffff;
+  --jelly-fill: #5c1626; --jelly-dot: #a8374f;
+  --r-tile: 14px; --r-card: 18px; --r-btn: 12px;
+}
+/* ---------- 4. Forest Enchanted · тёмная ---------- */
+[data-theme="forest"] {
+  --palette-name: "Forest Enchanted";
+  --primary: #c9a227; --secondary: #2b563b; --accent: #cae3cf;
+  --surface: #1e3b29; --border: #2b563b;
+  --bg-stop-1: #0f1f15; --bg-stop-2: #1e3b29; --bg-stop-3: #2b563b;
+  --glow-1: #c9a227; --glow-2: #5f591b;
+  --blob-1: #c9a227; --blob-2: #2b563b; --blob-3: #cae3cf; --blob-4: #5f591b;
+  --txt1: #f5fffa; --txt2: #cae3cf; --on-primary: #050a05;
+  --jelly-fill: #5f591b; --jelly-dot: #a18522;
+  --r-tile: 22px; --r-card: 28px; --r-btn: 24px;
+}
+/* ---------- 5. Dark Blue (id «green») · тёмная · тёмно-синяя ---------- */
+[data-theme="green"] {
+  --palette-name: "Dark Blue";
+  --primary: #3f66a6; --secondary: #1f3556; --accent: #bccce6;
+  --surface: #0c1727; --border: #2b4468;
+  --bg-stop-1: #060c16; --bg-stop-2: #0c1727; --bg-stop-3: #1f3a5e;
+  --glow-1: #3f66a6; --glow-2: #1f3556;
+  --blob-1: #3f66a6; --blob-2: #1f3556; --blob-3: #8fa9d1; --blob-4: #2b4468;
+  --txt1: #eef3fa; --txt2: #bccce6; --on-primary: #ffffff;
+  --jelly-fill: #1f3556; --jelly-dot: #4a73b5;
+  --r-tile: 22px; --r-card: 30px; --r-btn: 28px;
+}
+/* ---------- 6. Y2K Butterfly · светлая ---------- */
+[data-theme="y2k"] {
+  --palette-name: "Y2K Butterfly";
+  --primary: #ff69b4; --secondary: #f0b8df; --accent: #ffa5cb;
+  --surface: #f0b8df; --border: #ffffff;
+  --bg-stop-1: #ffd1dc; --bg-stop-2: #f0b8df; --bg-stop-3: #ff69b4;
+  --glow-1: #ff69b4; --glow-2: #ffa5cb;
+  --blob-1: #ff69b4; --blob-2: #f0b8df; --blob-3: #ffa5cb; --blob-4: #ff81be;
+  --txt1: #32002a; --txt2: #562445; --on-primary: #090004;
+  --jelly-fill: #ffa5cb; --jelly-dot: #ff81be;
+  --r-tile: 50%; --r-card: 46px; --r-btn: 999px;
+}
+/* ---------- 7. Sepia Vintage · светлая ---------- */
+[data-theme="sepia"] {
+  --palette-name: "Sepia Vintage";
+  --primary: #8d6e63; --secondary: #d7ccc8; --accent: #af978b;
+  --surface: #f7e6d4; --border: #dbcfbf;
+  --bg-stop-1: #fef5e6; --bg-stop-2: #f7e6d4; --bg-stop-3: #d7ccc8;
+  --glow-1: #8d6e63; --glow-2: #af978b;
+  /* blob-4 добавлен: тёплый терракотовый тон, гармонирует с карточкой */
+  --blob-1: #8d6e63; --blob-2: #d7ccc8; --blob-3: #af978b; --blob-4: #c9a58f;
+  --txt1: #211308; --txt2: #3d3023; --on-primary: #fefdfd;
+  --jelly-fill: #e1d3c6; --jelly-dot: #af978b;
+  --r-tile: 6px; --r-card: 10px; --r-btn: 6px;
+}
+/* ---------- 8. Graphite Glass · тёмная (чёрно-серое «жидкое стекло», как Plasma, но в графитовых тонах) ---------- */
+[data-theme="graphite"] {
+  --palette-name: "Graphite Glass";
+  --primary: #d4d4d8; --secondary: #71717a; --accent: #a1a1aa;
+  --surface: #18181b; --border: #52525b;
+  --bg-stop-1: #09090b; --bg-stop-2: #18181b; --bg-stop-3: #3f3f46;
+  --glow-1: #d4d4d8; --glow-2: #71717a;
+  --blob-1: #d4d4d8; --blob-2: #71717a; --blob-3: #a1a1aa; --blob-4: #3f3f46;
+  --txt1: #fafafa; --txt2: #d4d4d8; --on-primary: #09090b;
+  --jelly-fill: #3f3f46; --jelly-dot: #a1a1aa;
+  --r-tile: 20px; --r-card: 24px; --r-btn: 18px;
+}
+
+/* ---------- Производные токены (для каждой палитры) ---------- */
+:root, [data-theme] {
+  --c1: var(--primary); --c2: var(--secondary); --c3: var(--accent);
+  /* алиасы для оригинального SVG-аватара профиля (он не менялся) */
+  --bg1: var(--bg-stop-1); --bg2: var(--surface); --accH: color-mix(in srgb, var(--primary) 70%, var(--accent));
+  --acc: var(--primary); --acc-ring: color-mix(in srgb, var(--primary) 38%, transparent);
+  --txt3: color-mix(in srgb, var(--txt2) 68%, transparent);
+  --danger: #d9566e;
+  --primary-ink: color-mix(in srgb, var(--primary) 42%, var(--txt1));   /* оттенок primary для ТЕКСТА и иконок на тёмном фоне (читается лучше, чем сам primary) */
+  --pop-bg: color-mix(in srgb, var(--bg-stop-2) 95%, var(--primary));   /* непрозрачный фон выпадающих списков и меню */
+  --staff-color: var(--secondary);   /* цвет сообщений и уведомлений от модерации (внутри палитры темы) */
+  --opt-bg: color-mix(in srgb, var(--bg-stop-1) 92%, var(--primary));
+  --bg-grad: radial-gradient(120% 90% at 10% 0%, var(--bg-stop-2) 0%, transparent 58%),
+             radial-gradient(100% 80% at 100% 100%, color-mix(in srgb, var(--bg-stop-3) 45%, transparent) 0%, transparent 62%),
+             var(--bg-stop-1);
+  --blob-opacity: .3; --blob-blend: screen; --shadow-rgb: 4, 2, 12;
+  /* стекло: тёмные темы */
+  --glass-1: rgba(255, 255, 255, .15); --glass-2: rgba(255, 255, 255, .05); --glass-3: rgba(255, 255, 255, .09);
+  --glass-input: rgba(255, 255, 255, .07); --glass-hover: rgba(255, 255, 255, .14);
+  --glass-brd: rgba(255, 255, 255, .2); --edge-hi: rgba(255, 255, 255, .36); --edge-lo: rgba(255, 255, 255, .06);
+  --edge-warm: rgba(255, 110, 150, .06); --edge-cool: rgba(90, 210, 255, .07);   /* хроматическая аберрация (приглушена) */
+  --shadow-float: 0 18px 50px -12px rgba(var(--shadow-rgb), .7), 0 4px 14px rgba(var(--shadow-rgb), .35);
+  --shadow-pop: 0 30px 80px -10px rgba(var(--shadow-rgb), .85), 0 8px 24px rgba(var(--shadow-rgb), .45);
+  --glow-acc: 0 0 16px color-mix(in srgb, var(--glow-1) 26%, transparent);
+  --glow-soft: 0 0 40px color-mix(in srgb, var(--glow-2) 14%, transparent);
+  --card-extra: 0 0 0 0 transparent;     /* доп. тень виджетов (Industrial — жёсткая смещённая) */
+}
+/* стекло: светлые темы */
+[data-theme="y2k"], [data-theme="sepia"] {
+  --blob-opacity: .55; --blob-blend: multiply; --shadow-rgb: 90, 50, 80;
+  --glass-1: rgba(255, 255, 255, .7); --glass-2: rgba(255, 255, 255, .3); --glass-3: rgba(255, 255, 255, .48);
+  --glass-input: rgba(255, 255, 255, .55); --glass-hover: rgba(255, 255, 255, .85);
+  --glass-brd: rgba(255, 255, 255, .85); --edge-hi: rgba(255, 255, 255, 1); --edge-lo: rgba(100, 80, 120, .1);
+  --edge-warm: rgba(255, 110, 150, .16); --edge-cool: rgba(60, 190, 240, .2);
+  --shadow-float: 0 18px 44px -14px rgba(var(--shadow-rgb), .38), 0 4px 12px rgba(var(--shadow-rgb), .14);
+  --shadow-pop: 0 30px 70px -12px rgba(var(--shadow-rgb), .5), 0 8px 20px rgba(var(--shadow-rgb), .2);
+  --glow-acc: 0 0 14px color-mix(in srgb, var(--glow-1) 22%, transparent);
+  --glow-soft: 0 0 36px color-mix(in srgb, var(--glow-2) 14%, transparent);
+}
+[data-theme="sepia"] { --shadow-rgb: 110, 80, 60; }
+/* неоновое свечение карточек — как на референсах */
+[data-theme="neon"], [data-theme="plasma"], [data-theme="forest"], [data-theme="green"], [data-theme="y2k"], [data-theme="graphite"] { --card-extra: 0 0 22px color-mix(in srgb, var(--glow-1) 11%, transparent); }
+[data-theme="neon"] { --glass-brd: rgba(155, 45, 69, .5); }
+[data-theme="plasma"] { --glass-brd: rgba(154, 130, 184, .34); }
+[data-theme="forest"] { --glass-brd: rgba(201, 162, 39, .35); }
+[data-theme="green"] { --glass-brd: rgba(63, 102, 166, .45); }
+[data-theme="graphite"] { --glass-brd: rgba(212, 212, 216, .3); }
+[data-theme="cognac"] { --glass-brd: rgba(138, 95, 63, .5); --glass-1: rgba(255, 225, 195, .12); }
+
+:root {
+  /* общие токены */
+  --r-sm: 12px; --r-md: 18px; --r-lg: 26px; --r-xl: 36px; --r-pill: 999px;
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 72px;
+  --blur-sm: 12px; --blur: 26px; --blur-lg: 44px; --sat: 125%;
+  --ease: cubic-bezier(.22, 1, .36, 1); --t-fast: 200ms; --t-med: 300ms; --t-slow: 400ms;
+  --font: 'Manrope', 'Plus Jakarta Sans', 'Segoe UI Variable', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --fs-xs: 12px; --fs-sm: 13.5px; --fs-md: 15px; --fs-lg: 18px; --fs-xl: 26px; --fs-2xl: 36px;
+}
+
+/* цвет «от модерации» для каждой темы — из её палитры, чтобы отличался от обычных карточек */
+[data-theme="cognac"] { --staff-color: var(--accent); }
+[data-theme="neon"] { --staff-color: var(--accent); }
+[data-theme="forest"] { --staff-color: var(--accent); }
+[data-theme="green"] { --staff-color: var(--accent); }
+[data-theme="y2k"] { --staff-color: var(--txt2); }
+[data-theme="sepia"] { --staff-color: var(--txt2); }
+[data-theme="graphite"] { --staff-color: var(--txt1); }
